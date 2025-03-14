@@ -1,11 +1,18 @@
+/*
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructuras de Datos
+ * @Author: Jackelyn Nicolle Girón Villacinda 
+ * Carné: 24737
+ */
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class Main {
 
@@ -23,7 +30,7 @@ public class Main {
         }
         int opcion = sc.nextInt();
         Map<String, Pokemon> mapa = admin.leerPokemon("pokemon_data_pokeapi.csv", opciones[opcion], mapFactory);
-        TreeMap<String, Pokemon> coleccion = new TreeMap<>();
+        HashMap<String, Pokemon> coleccion = new HashMap<>();
 
         while (continuar) {
             System.out.println();
