@@ -1,15 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pokemon {
-    String name;
-    int pokedexNumber;
-    int level;
-    String type1;
-    String type2;
-    String classification;
-    double height;
-    double weight;
-    String ability;
-    int generation;
-    boolean isLegendary;
+    private String name;
+    private int pokedexNumber;
+    private String type1;
+    private String type2;
+    private String classification;
+    private double height;
+    private double weight;
+    List<String> ability;
+    private int generation;
+    private boolean isLegendary;
 
 
     public Pokemon(){}
@@ -17,10 +19,9 @@ public class Pokemon {
     /*
      * Constructor de la clase Pokemon con toda la informacion del csv de un pokemon
      */
-    public Pokemon(String name, int pokedexNumber, int level, String type1, String type2, String classification, double height,double weight, String ability, int generation, boolean isLegendary){
+    public Pokemon(String name, int pokedexNumber, String type1, String type2, String classification, double height,double weight, List<String> ability, int generation, boolean isLegendary){
         this.name = name;
         this.pokedexNumber = pokedexNumber;
-        this.level = level;
         this.type1 = type1;
         this.type2 = type2;
         this.classification = classification;
@@ -30,6 +31,13 @@ public class Pokemon {
         this.generation = generation;
         this.isLegendary = isLegendary;
     }
+
+    public void addAbility(String ability) {
+    if (this.ability == null) {
+        this.ability = new ArrayList<>();
+    }
+    this.ability.add(ability);
+}
     public String getName() {
         return this.name;
     }
@@ -44,14 +52,6 @@ public class Pokemon {
 
     public void setPokedexNumber(int pokedexNumber) {
         this.pokedexNumber = pokedexNumber;
-    }
-
-    public int getLevel() {
-        return this.level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public String getType1() {
@@ -94,11 +94,11 @@ public class Pokemon {
         this.weight = weight;
     }
 
-    public String getAbility() {
+    public List<String> getAbility() {
         return this.ability;
     }
 
-    public void setAbility(String ability) {
+    public void setAbility(List<String> ability) {
         this.ability = ability;
     }
 
@@ -110,7 +110,7 @@ public class Pokemon {
         this.generation = generation;
     }
 
-    public boolean isIsLegendary() {
+    public boolean getIsLegendary() {
         return this.isLegendary;
     }
 
